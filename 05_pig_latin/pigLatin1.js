@@ -23,7 +23,7 @@ var translate = function (statment) {
 		else {
 			return console.log("please enter a valid word");
 		};
-	}
+	} 
 	return phrase;
 
 }
