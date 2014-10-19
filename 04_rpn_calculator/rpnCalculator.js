@@ -12,14 +12,14 @@ function Calculator() {
 		return total;
 	}
 	
-	this.push = function(number){	// only problem with this funciton is
-		return rpn.push(number); // only one number can be added to rpn 
-	}								// and multiply or divided.
+	this.push = function(number){	
+			 rpn.push(number); 
+	}								
 
 	this.plus = function(number){
-		if (rpn.length <= 0) {
-			return console.log("error the Calculator is empthy")
-		}; 
+		if (rpn.length < 2) {
+			throw "error the Calculator is empthy"
+		} 
 		else {
 			total = rpn[rpn.length-2] + rpn[rpn.length-1];
 			rpn.pop();
@@ -30,9 +30,9 @@ function Calculator() {
 	}
 	
 	this.minus = function(number){
-		if (rpn.length <= 0) {
-			return console.log("error the Calculator is empthy")
-		}; 
+		if (rpn.length < 2) {
+			throw "error the Calculator is empthy"	
+		} 
 		else {
 			total = rpn[rpn.length-2] - rpn[rpn.length-1];
 			rpn.pop();
@@ -43,9 +43,9 @@ function Calculator() {
 	}
 
 	this.multiply = function(number) {
-		if (rpn.length <= 0) {
-			return console.log("error the Calculator is empthy")
-		}; 
+		if (rpn.length < 2) {
+			throw "error the Calculator is empthy"
+		} 
 		else {
 			total = rpn[rpn.length-2] * rpn[rpn.length-1];
 			rpn.pop();
@@ -56,9 +56,9 @@ function Calculator() {
 	}
 	
 	this.divide = function(number) {
-		if (rpn.length <= 0) {
-			return console.log("error the Calculator is empthy")
-		}; 
+		if (rpn.length < 2) {
+			throw "error the Calculator is empthy"
+		} 
 		else {
 			total = rpn[rpn.length-2] / rpn[rpn.length-1];
 			rpn.pop();
