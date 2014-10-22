@@ -68,29 +68,34 @@ function sum(integers) {
 };
 
 function every(array, func) {
-	var value = true;
-	for (var i = 0; i < array.length; i++) {
-		
+	for (var i = 0; i < array.length; i++) {	
 			if (func(array[i]) == false) {
-				value = false;
+				return = false;
+			}
+			else {
+				return true
 			}	
-	}
-	return value
+	}	
 };
 
 
 
+var once = function(inputFunc) {
+  var calledAlready = false;
+  return function() {
+    if (!calledAlready) {
+      inputFunc();
+      calledAlready = true;
+    }
+  };
+};
 
 
-function once(inputfunc) {
-	
-
-	var number = 0
-	return function() {
-		inputfunc
-
-	}
-}
+var wrapper = function(codeBlockFunction, blockWrapFunc) {
+  return function() {
+    return blockWrapFunc(codeBlockFunction);
+  }
+};
 
 
 
