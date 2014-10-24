@@ -34,12 +34,21 @@ function filter(array, filters) {
 
 
 var contains = function(array, identifier) {
-	for (var i=0; i < array.length; i++) {
-		if (array[i] == identifier) {
-			return true;
-		}	
+	for(var key in array ){
+		if(array.hasOwnProperty(key)){
+			if(array[key] === identifier){
+				return true;
+			}
+		}
 	}
-		return false;
+
+	return false;
+	// for (var i=0; i < array.length; i++) {
+	// 	if (array[i] !== identifier) {
+	// 		return false;
+	// 	}	
+	// }
+	// 	return true;
 };
 
 function countWordsInReduce(array, start) {
@@ -69,23 +78,48 @@ function sum(integers) {
 
 function every(array, func) {
 	for (var i = 0; i < array.length; i++) {	
-			if (func(array[i]) == false) {
-				return = false;
-			}
-			else {
-				return true
-			}	
-	}	
+		if(!func(array[i])){
+			return false;
+		}
+
+	}
+
+	return true;
+
+
+			// if (array == undefined) {
+			// 	return true
+			// }
+			// else if (func(array[i]) == false) {
+			// 	return  false;
+			// }
+			// else {
+			// 	return true
+			// }	
+		
 };
 
-
+function any(array, func) {
+	for (var i = 0; i < array.length; i++) {
+		if (!func(array[i])) {
+			return true;
+		}
+		else if (array[i] === "true") {
+			return true;
+		}
+		/*else  {
+			
+		}*/
+	}
+	return false;
+}
 
 var once = function(inputFunc) {
-  var calledAlready = false;
+  var ifCalledAlready = false;
   return function() {
-    if (!calledAlready) {
+    if (!ifCalledAlready) {
       inputFunc();
-      calledAlready = true;
+      ifCalledAlready = true;
     }
   };
 };
