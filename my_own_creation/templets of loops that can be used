@@ -1,0 +1,9 @@
+//an example of if/else using input === undefined
+var input = function() {
+	if (input === undefined) {
+	doThis();
+	}
+	else {
+	doThat ();
+	}
+}
