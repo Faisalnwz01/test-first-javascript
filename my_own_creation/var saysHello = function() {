@@ -1,7 +1,0 @@
-var saysHello = function() {
-	console.log("hello")
-}
-
-var saysHelloToSomeone = function(name) {
-	console.log("hello, how are you " + name + "?")
-}
